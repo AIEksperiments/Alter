@@ -8,13 +8,13 @@
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f5f5f5, #c3cfe2);
+            background: #f5f5f5;
             color: #333;
         }
         header {
-            background: #222;
+            background: #333;
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
             position: sticky;
             top: 0;
@@ -25,29 +25,39 @@
             font-size: 2.5em;
             letter-spacing: 2px;
         }
-        main {
+        .hero {
+            background: url('ditt-bilde-url-her.jpg') no-repeat center center/cover;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .hero h2 {
+            font-size: 3em;
+        }
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         section {
-            width: 80%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.8);
+            background: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            text-align: center;
         }
-        h2 {
+        section h2 {
             font-size: 2em;
             margin-bottom: 10px;
             position: relative;
             display: inline-block;
         }
-        h2::after {
+        section h2::after {
             content: '';
             width: 50px;
             height: 4px;
@@ -57,7 +67,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .profile-pic {
+        .about img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -65,29 +75,40 @@
             margin: 0 auto 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
+        .interests ul {
+            list-style: none;
+            padding: 0;
         }
-        .social-links a {
+        .interests li {
+            background: #ff6347;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: background 0.3s;
+        }
+        .interests li:hover {
+            background: #e5533d;
+        }
+        .contact-info {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .contact-info a {
+            color: #ff6347;
             text-decoration: none;
-            color: #333;
-            font-size: 1.5em;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
         footer {
-            background: #222;
+            background: #333;
             color: #fff;
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        footer p {
-            margin: 0;
-            font-size: 1em;
         }
     </style>
 </head>
@@ -95,38 +116,33 @@
     <header>
         <h1>Alter Egon</h1>
     </header>
+    <div class="hero">
+        <h2>Welcome to My World</h2>
+    </div>
     <main>
-        <section id="about">
+        <section class="about" id="about">
             <h2>Om meg</h2>
-            <img src="portrait.jpg" alt="Alter Egon" class="profile-pic">
+            <img src="ditt-bilde-url-her.jpg" alt="Alter Egon">
             <p>En ung fyr som ikke er i spesielt god kontakt med sitt egentlige jeg. Som liker biff og damer. Og som er skeptisk til det meste av det som er populært å mene.</p>
         </section>
-        <section id="interests">
+        <section class="interests" id="interests">
             <h2>Interesser</h2>
-            <p>Jeg har mange interesser, men de fleste går på tvers av det som er mainstream. Her er noen av mine favoritter:</p>
             <ul>
                 <li>Biff - Det beste måltidet som finnes.</li>
                 <li>Damer - Alltid et spennende emne.</li>
                 <li>Kritisk tenkning - Alltid skeptisk til det som er populært å mene.</li>
             </ul>
         </section>
-        <section id="contact">
+        <section class="contact" id="contact">
             <h2>Kontaktinformasjon</h2>
-            <p>Du kan nå meg på:</p>
             <div class="contact-info">
+                <p>Du kan nå meg på:</p>
                 <p>Email: <a href="mailto:alter.egon@example.com">alter.egon@example.com</a></p>
-            </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Alter Egon. All rights reserved.</p>
     </footer>
-    <!-- Font Awesome for social media icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
